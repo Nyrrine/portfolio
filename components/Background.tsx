@@ -1,35 +1,29 @@
 'use client';
 
-import { useEffect, useState } from 'react';
-
 export default function Background() {
-  const [mousePos, setMousePos] = useState({ x: 50, y: 50 });
-
-  useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
-      setMousePos({
-        x: (e.clientX / window.innerWidth) * 100,
-        y: (e.clientY / window.innerHeight) * 100,
-      });
-    };
-
-    window.addEventListener('mousemove', handleMouseMove);
-    return () => window.removeEventListener('mousemove', handleMouseMove);
-  }, []);
-
   return (
     <>
       <div className="fixed inset-0 -z-10 overflow-hidden">
+        {/* Gradient mesh background */}
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-white to-purple-50 dark:from-gray-950 dark:via-gray-900 dark:to-blue-950" />
+        
+        {/* Animated gradient orbs */}
         <div className="floating-orb orb-1" />
         <div className="floating-orb orb-2" />
         <div className="floating-orb orb-3" />
+        
+        {/* Static gradient overlay for depth */}
+        <div className="absolute inset-0 bg-gradient-to-t from-transparent via-transparent to-white/10 dark:to-black/10" />
+        
+        {/* Subtle grid pattern */}
+        <div 
+          className="absolute inset-0 opacity-[0.02] dark:opacity-[0.05]"
+          style={{
+            backgroundImage: `radial-gradient(circle, rgba(65, 105, 225, 0.3) 1px, transparent 1px)`,
+            backgroundSize: '50px 50px'
+          }}
+        />
       </div>
-      <div 
-        className="ray-background"
-        style={{
-          background: `radial-gradient(circle at ${mousePos.x}% ${mousePos.y}%, rgba(65, 105, 225, 0.08) 0%, transparent 50%)`,
-        }}
-      />
     </>
   );
 }

@@ -6,8 +6,8 @@ import { useRef, useEffect, useState } from 'react';
 const impactMetrics = [
   { label: 'Communities Built', value: 208000, suffix: '+ members' },
   { label: 'Software Downloads', value: 1017000, suffix: '+ users' },
-  { label: 'Enterprise Value', value: 'Millions', prefix: '₱', suffix: ' processed daily' },
-  { label: 'Projects Shipped', value: 4, suffix: ' production systems' }
+  { label: 'Enterprise Value', value: 'Millions', prefix: '₱', suffix: ' handled' },
+  { label: 'Developer Projects', value: 4, suffix: ' production systems' }
 ];
 
 export default function ImpactSummary() {

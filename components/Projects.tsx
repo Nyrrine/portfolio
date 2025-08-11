@@ -8,42 +8,42 @@ const projects = [
     id: 1,
     title: 'STATUS',
     subtitle: 'AI Social Simulation Platform',
-    description: 'Community & Data Analytics Lead',
+    description: 'Data Manager & RPA Developer',
     metrics: [
       { icon: Download, value: '1M+', label: 'Downloads' },
       { icon: Users, value: '200K+', label: 'Discord Members' }
     ],
     color: 'from-blue-500 to-cyan-500',
     bgPattern: 'bg-gradient-to-br from-blue-500/10 to-cyan-500/10',
-    tags: ['Community Management', 'Data Analytics', 'Automation', 'KPI Tracking'],
+    tags: ['Data Management', 'RPA Development', 'Automation', 'Community Analytics'],
     link: '#'
   },
   {
     id: 2,
     title: 'ENTERPRISE DASHBOARD',
-    subtitle: 'Supply Chain Management',
+    subtitle: 'FMCG Supply Chain Management',
     description: 'Full-Stack Development',
     metrics: [
-      { icon: DollarSign, value: '₱Millions', label: 'Daily Transactions' },
+      { icon: DollarSign, value: '₱Millions', label: 'Handled in POS Daily' },
       { icon: Users, value: '40+', label: 'Concurrent Users' }
     ],
     color: 'from-emerald-500 to-teal-500',
     bgPattern: 'bg-gradient-to-br from-emerald-500/10 to-teal-500/10',
     tags: ['TypeScript', 'React', 'Node.js', 'PostgreSQL'],
-    companies: ['SM', 'Robinsons', 'PureGold'],
+    specialNote: 'Modernizes FMCG pivoting tables and workflows',
     link: '#'
   },
   {
     id: 3,
-    title: 'THE OC',
+    title: 'THE OC NETWORK',
     subtitle: 'Social Network Platform',
-    description: 'Development Team Member',
+    description: 'Data Manager & RPA Developer',
     metrics: [
       { icon: Users, value: '8,000+', label: 'Discord Community' }
     ],
     color: 'from-purple-500 to-pink-500',
     bgPattern: 'bg-gradient-to-br from-purple-500/10 to-pink-500/10',
-    tags: ['Social Network', 'Community Building', 'Growth'],
+    tags: ['Data Management', 'RPA Development', 'Community Building', 'Growth'],
     isGrowing: true,
     link: '#'
   },
@@ -51,13 +51,13 @@ const projects = [
     id: 4,
     title: 'CUSTOMS AND COFFEE',
     subtitle: 'Indie Game Project',
-    description: 'Co-Developer with Friends',
+    description: 'Lead Developer',
     metrics: [
       { icon: Download, value: '17,000+', label: 'Downloads' }
     ],
     color: 'from-amber-600 to-orange-500',
     bgPattern: 'bg-gradient-to-br from-amber-600/10 to-orange-500/10',
-    tags: ['Game Development', 'Collaboration', 'Creative'],
+    tags: ['Godot', 'Project Management', 'Game Development', 'Team Leadership'],
     link: '#'
   }
 ];
@@ -95,7 +95,7 @@ export default function Projects() {
               <div className="relative bg-white dark:bg-gray-900 rounded-2xl p-8 border border-gray-200 dark:border-gray-800 hover:border-gray-300 dark:hover:border-gray-700 transition-all">
                 <div className="flex justify-between items-start mb-4">
                   <div>
-                    <h3 className="text-2xl font-bold mb-1">{project.title}</h3>
+                    <h3 className="text-2xl font-bold mb-1 text-gray-900 dark:text-white">{project.title}</h3>
                     <p className="text-gray-600 dark:text-gray-400">{project.subtitle}</p>
                   </div>
                   {project.isGrowing && (
@@ -119,14 +119,9 @@ export default function Projects() {
                   ))}
                 </div>
 
-                {project.companies && (
-                  <div className="mb-4 flex gap-2 text-sm text-gray-500 dark:text-gray-400">
-                    {project.companies.map((company, i) => (
-                      <span key={i}>
-                        {company}
-                        {i < project.companies.length - 1 && ' •'}
-                      </span>
-                    ))}
+                {project.specialNote && (
+                  <div className="mb-4 text-sm text-gray-600 dark:text-gray-400 italic">
+                    {project.specialNote}
                   </div>
                 )}
 
