@@ -7,12 +7,12 @@ import { useState } from 'react';
 const reasons = [
   {
     icon: TrendingUp,
-    title: 'Proven Track Record',
-    stat: '1M+',
-    description: 'Users served across platforms',
+    title: 'Client-Focused Approach',
+    stat: '100%',
+    description: 'Understanding through business cases',
     color: 'from-blue-500 to-cyan-500',
     hoverColor: 'hover:border-blue-500',
-    details: 'Successfully scaled platforms from 0 to millions'
+    details: 'I converse and solve problems to understand what my client wants to build'
   },
   {
     icon: Zap,

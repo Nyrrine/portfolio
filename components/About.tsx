@@ -85,8 +85,9 @@ export default function About() {
                 <h4 className="font-semibold text-gray-900 dark:text-white">Achievements</h4>
               </div>
               <ul className="space-y-2 text-gray-600 dark:text-gray-400">
-                <li>• Helped scale Status to 1M+ users</li>
-                <li>• Built enterprise FMCG system</li>
+                <li>• Spearheading staffing for Status technical support and moderation departments</li>
+                <li>• Built enterprise FMCG system myself</li>
+                <li>• Implementing community support systems for 2.5 million users in Status</li>
                 <li>• Grew Discord communities by 200K+ members</li>
                 <li>• Lead developer on multiple projects</li>
               </ul>

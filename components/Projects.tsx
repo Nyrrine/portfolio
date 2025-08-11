@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { ExternalLink, Users, Download, DollarSign, TrendingUp } from 'lucide-react';
+import Image from 'next/image';
 
 const projects = [
   {
@@ -9,8 +10,9 @@ const projects = [
     title: 'STATUS',
     subtitle: 'AI Social Simulation Platform',
     description: 'Data Manager & RPA Developer',
+    logo: '/statuslogo.png',
     metrics: [
-      { icon: Download, value: '1M+', label: 'Downloads', prefix: '' },
+      { icon: Download, value: '2.5M+', label: 'Downloads', prefix: '' },
       { icon: Users, value: '200K+', label: 'Discord Members', prefix: '' }
     ],
     color: 'from-blue-500 to-cyan-500',
@@ -22,17 +24,18 @@ const projects = [
   },
   {
     id: 2,
-    title: 'ENTERPRISE DASHBOARD',
+    title: 'ARBITER',
     subtitle: 'FMCG Supply Chain Management',
     description: 'Full-Stack Development',
+    logo: '/arbiteraiapplogo.png',
     metrics: [
       { icon: TrendingUp, value: '₱ Millions', label: 'Handled in POS Daily', prefix: '' },
       { icon: Users, value: '40+', label: 'Concurrent Users', prefix: '' }
     ],
-    color: 'from-emerald-500 to-teal-500',
-    bgPattern: 'bg-gradient-to-br from-emerald-500/10 to-teal-500/10',
-    hoverColor: 'hover:shadow-emerald-500/30',
-    borderGlow: 'hover:border-emerald-500',
+    color: 'from-amber-500 to-yellow-500',
+    bgPattern: 'bg-gradient-to-br from-amber-500/10 to-yellow-500/10',
+    hoverColor: 'hover:shadow-amber-500/30',
+    borderGlow: 'hover:border-amber-500',
     tags: ['TypeScript', 'React', 'Node.js', 'PostgreSQL'],
     specialNote: 'Modernizes FMCG pivoting tables and workflows',
     link: '#'
@@ -42,6 +45,7 @@ const projects = [
     title: 'THE OC NETWORK',
     subtitle: 'Social Network Platform',
     description: 'Data Manager & RPA Developer',
+    logo: '/ocsn.png',
     metrics: [
       { icon: Users, value: '8,000+', label: 'Discord Community', prefix: '' }
     ],
@@ -58,13 +62,14 @@ const projects = [
     title: 'CUSTOMS AND COFFEE',
     subtitle: 'Indie Game Project',
     description: 'Lead Developer',
+    logo: '/customsandcoffee.png',
     metrics: [
       { icon: Download, value: '17,000+', label: 'Downloads', prefix: '' }
     ],
-    color: 'from-amber-600 to-orange-500',
-    bgPattern: 'bg-gradient-to-br from-amber-600/10 to-orange-500/10',
-    hoverColor: 'hover:shadow-amber-500/30',
-    borderGlow: 'hover:border-amber-500',
+    color: 'from-amber-700 to-amber-800',
+    bgPattern: 'bg-gradient-to-br from-amber-700/10 to-amber-800/10',
+    hoverColor: 'hover:shadow-amber-700/30',
+    borderGlow: 'hover:border-amber-700',
     tags: ['Godot', 'Project Management', 'Game Development', 'Team Leadership'],
     isInDev: true,
     link: '#'
@@ -103,9 +108,22 @@ export default function Projects() {
               
               <div className={`relative bg-white dark:bg-gray-900 rounded-2xl p-8 border-2 border-gray-200 dark:border-gray-800 transition-all duration-300 ${project.borderGlow} ${project.hoverColor} hover:shadow-lg`}>
                 <div className="flex justify-between items-start mb-4">
-                  <div>
-                    <h3 className="text-2xl font-bold mb-1 text-gray-900 dark:text-white">{project.title}</h3>
-                    <p className="text-gray-600 dark:text-gray-400">{project.subtitle}</p>
+                  <div className="flex items-start gap-4">
+                    {project.logo && (
+                      <div className="w-12 h-12 relative flex-shrink-0">
+                        <Image
+                          src={project.logo}
+                          alt={`${project.title} logo`}
+                          width={48}
+                          height={48}
+                          className="rounded-lg object-cover"
+                        />
+                      </div>
+                    )}
+                    <div>
+                      <h3 className="text-2xl font-bold mb-1 text-gray-900 dark:text-white">{project.title}</h3>
+                      <p className="text-gray-600 dark:text-gray-400">{project.subtitle}</p>
+                    </div>
                   </div>
                   {project.isGrowing && (
                     <span className="px-3 py-1 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 text-sm rounded-full animate-pulse">

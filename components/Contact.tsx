@@ -1,7 +1,8 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Mail, Github, Linkedin, MessageCircle } from 'lucide-react';
+import { Mail, Github, Linkedin } from 'lucide-react';
+import { FaDiscord } from 'react-icons/fa';
 
 export default function Contact() {
   return (
@@ -31,22 +32,22 @@ export default function Contact() {
             <div>
               <h3 className="text-xl font-semibold mb-4">Connect With Me</h3>
               <div className="space-y-4">
-                <a href="mailto:your.email@example.com" className="flex items-center gap-3 text-gray-600 dark:text-gray-400 hover:text-[var(--primary)] transition-colors">
+                <a href="mailto:nyrrine@gmail.com" className="flex items-center gap-3 text-gray-600 dark:text-gray-400 hover:text-[var(--primary)] transition-colors">
                   <Mail className="w-5 h-5" />
-                  <span>your.email@example.com</span>
+                  <span>nyrrine@gmail.com</span>
                 </a>
-                <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-gray-600 dark:text-gray-400 hover:text-[var(--primary)] transition-colors">
+                <a href="https://github.com/Nyrrine" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-gray-600 dark:text-gray-400 hover:text-[var(--primary)] transition-colors">
                   <Github className="w-5 h-5" />
-                  <span>GitHub</span>
+                  <span>Nyrrine</span>
                 </a>
-                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-gray-600 dark:text-gray-400 hover:text-[var(--primary)] transition-colors">
+                <a href="https://www.linkedin.com/in/joaquin-ross-70a528346/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-gray-600 dark:text-gray-400 hover:text-[var(--primary)] transition-colors">
                   <Linkedin className="w-5 h-5" />
-                  <span>LinkedIn</span>
+                  <span>Joaquin Ross</span>
                 </a>
-                <a href="https://discord.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-gray-600 dark:text-gray-400 hover:text-[var(--primary)] transition-colors">
-                  <MessageCircle className="w-5 h-5" />
-                  <span>Discord</span>
-                </a>
+                <div className="flex items-center gap-3 text-gray-600 dark:text-gray-400">
+                  <FaDiscord className="w-5 h-5" />
+                  <span>nyrrine</span>
+                </div>
               </div>
             </div>
 
