@@ -14,7 +14,7 @@ export default function Contact() {
           viewport={{ once: true }}
           className="text-center mb-12"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">Let&apos;s Build Together</h2>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gray-900 dark:text-white">Let&apos;s Build Together</h2>
           <p className="text-gray-600 dark:text-gray-400 text-lg">
             Ready to create something incredible? Get in touch.
           </p>
