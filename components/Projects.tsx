@@ -9,7 +9,7 @@ const projects = [
     id: 1,
     title: 'STATUS',
     subtitle: 'AI Social Simulation Platform',
-    description: 'Data Manager & RPA Developer',
+    description: 'Data Manager, RPA Developer & Community Management',
     logo: process.env.NODE_ENV === 'production' ? '/portfolio/statuslogov2.png' : '/statuslogov2.png',
     metrics: [
       { icon: Download, value: '2.5M+', label: 'Downloads', prefix: '' },
@@ -44,7 +44,7 @@ const projects = [
     id: 3,
     title: 'THE OC NETWORK',
     subtitle: 'Social Network Platform',
-    description: 'Data Manager & RPA Developer',
+    description: 'Data Manager, RPA Developer & Community Management',
     logo: process.env.NODE_ENV === 'production' ? '/portfolio/ocsn.png' : '/ocsn.png',
     metrics: [
       { icon: Users, value: '8,000+', label: 'Discord Community', prefix: '' }
