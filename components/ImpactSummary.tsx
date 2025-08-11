@@ -4,9 +4,9 @@ import { motion, useInView } from 'framer-motion';
 import { useRef, useEffect, useState } from 'react';
 
 const impactMetrics = [
-  { label: 'Communities Built', value: 208000, suffix: '+ members' },
-  { label: 'Software Downloads', value: 1017000, suffix: '+ users' },
-  { label: 'Project Count', value: 4, suffix: ' major projects' }
+  { label: 'Communities Built', value: 208000, suffix: '+ members', prefix: '' },
+  { label: 'Software Downloads', value: 1017000, suffix: '+ users', prefix: '' },
+  { label: 'Project Count', value: 4, suffix: ' major projects', prefix: '' }
 ];
 
 export default function ImpactSummary() {

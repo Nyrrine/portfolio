@@ -31,7 +31,7 @@ export default function Hero() {
       setJobTitleIndex((prev) => (prev + 1) % jobTitles.length);
     }, 2000);
     return () => clearInterval(interval);
-  }, []);
+  }, [jobTitles.length]);
 
   useEffect(() => {
     if (counted) {
