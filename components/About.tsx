@@ -72,7 +72,7 @@ export default function About() {
                 <h4 className="font-semibold text-gray-900 dark:text-white">Current Focus</h4>
               </div>
               <ul className="space-y-2 text-gray-600 dark:text-gray-400">
-                <li>• Scaling The OC Network to new heights</li>
+                <li>• Developing agentic AI applications</li>
                 <li>• Leading development on Customs and Coffee</li>
                 <li>• Exploring AI and automation opportunities</li>
                 <li>• Building tools that empower communities</li>

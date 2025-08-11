@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { ExternalLink, Users, Download, DollarSign } from 'lucide-react';
+import { ExternalLink, Users, Download, DollarSign, TrendingUp } from 'lucide-react';
 
 const projects = [
   {
@@ -26,7 +26,7 @@ const projects = [
     subtitle: 'FMCG Supply Chain Management',
     description: 'Full-Stack Development',
     metrics: [
-      { icon: DollarSign, value: 'Millions', label: 'Handled in POS Daily', prefix: '₱' },
+      { icon: TrendingUp, value: '₱ Millions', label: 'Handled in POS Daily', prefix: '' },
       { icon: Users, value: '40+', label: 'Concurrent Users', prefix: '' }
     ],
     color: 'from-emerald-500 to-teal-500',

@@ -15,16 +15,16 @@ const reasons = [
     details: 'Successfully scaled platforms from 0 to millions'
   },
   {
-    icon: Clock,
-    title: 'Fast Delivery',
-    stat: '24hr',
-    description: 'Average response time',
+    icon: Zap,
+    title: 'AI-Powered Efficiency',
+    stat: '10x',
+    description: 'Faster development with AI tools',
     color: 'from-emerald-500 to-teal-500',
     hoverColor: 'hover:border-emerald-500',
-    details: 'Quick turnaround on projects and fixes'
+    details: 'Leveraging cutting-edge AI for rapid prototyping and development'
   },
   {
-    icon: Zap,
+    icon: Clock,
     title: 'Modern Tech Stack',
     stat: '15+',
     description: 'Technologies mastered',
@@ -43,12 +43,12 @@ const reasons = [
   },
   {
     icon: Target,
-    title: 'Result Oriented',
-    stat: '100%',
-    description: 'Project success rate',
+    title: 'Scalable Solutions',
+    stat: '1M+',
+    description: 'Users handled seamlessly',
     color: 'from-rose-500 to-pink-500',
     hoverColor: 'hover:border-rose-500',
-    details: 'Every project delivered on time and budget'
+    details: 'Building systems designed to grow from day one'
   },
   {
     icon: Award,

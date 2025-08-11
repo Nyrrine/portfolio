@@ -103,23 +103,25 @@ export default function Hero() {
         </motion.h1>
         
         <motion.div 
-          className="text-xl md:text-2xl text-gray-600 dark:text-gray-400 mb-8 flex justify-center items-center gap-2"
+          className="text-xl md:text-2xl text-gray-600 dark:text-gray-400 mb-8 h-8"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
-          <span>Full-Stack Developer &</span>
-          <div className="relative inline-block w-48 text-left">
-            <motion.span
-              key={jobTitleIndex}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.3 }}
-              className="absolute left-0 text-[var(--primary)]"
-            >
-              {jobTitles[jobTitleIndex]}
-            </motion.span>
+          <div className="flex justify-center items-center">
+            <span>Full-Stack Developer &</span>
+            <div className="relative inline-block w-52 text-center ml-2">
+              <motion.span
+                key={jobTitleIndex}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.3 }}
+                className="text-[var(--primary)]"
+              >
+                {jobTitles[jobTitleIndex]}
+              </motion.span>
+            </div>
           </div>
         </motion.div>
         
