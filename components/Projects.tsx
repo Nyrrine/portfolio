@@ -10,7 +10,7 @@ const projects = [
     title: 'STATUS',
     subtitle: 'AI Social Simulation Platform',
     description: 'Data Manager & RPA Developer',
-    logo: process.env.NODE_ENV === 'production' ? '/portfolio/statuslogo.png' : '/statuslogo.png',
+    logo: process.env.NODE_ENV === 'production' ? '/portfolio/statuslogo-new.png' : '/statuslogo-new.png',
     metrics: [
       { icon: Download, value: '2.5M+', label: 'Downloads', prefix: '' },
       { icon: Users, value: '200K+', label: 'Discord Members', prefix: '' }
@@ -29,7 +29,7 @@ const projects = [
     description: 'Full-Stack Development',
     logo: process.env.NODE_ENV === 'production' ? '/portfolio/arbiteraiapplogo.png' : '/arbiteraiapplogo.png',
     metrics: [
-      { icon: TrendingUp, value: '₱ Millions', label: 'Handled in POS Daily', prefix: '' },
+      { icon: TrendingUp, value: 'Millions', label: 'of pesos handled in POS daily', prefix: '' },
       { icon: Users, value: '40+', label: 'Concurrent Users', prefix: '' }
     ],
     color: 'from-amber-500 to-yellow-500',
