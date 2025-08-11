@@ -17,13 +17,15 @@ export default function Background() {
 
   useEffect(() => {
     const colors = [
-      'rgba(59, 130, 246, 0.15)', // Blue
-      'rgba(168, 85, 247, 0.15)', // Purple
-      'rgba(236, 72, 153, 0.15)', // Pink
-      'rgba(34, 197, 94, 0.15)',  // Green
-      'rgba(251, 146, 60, 0.15)', // Orange
-      'rgba(147, 197, 253, 0.15)', // Light Blue
-      'rgba(196, 181, 253, 0.15)', // Light Purple
+      'rgba(59, 130, 246, 0.4)', // Blue
+      'rgba(168, 85, 247, 0.4)', // Purple
+      'rgba(236, 72, 153, 0.4)', // Pink
+      'rgba(34, 197, 94, 0.4)',  // Green
+      'rgba(251, 146, 60, 0.4)', // Orange
+      'rgba(147, 197, 253, 0.35)', // Light Blue
+      'rgba(196, 181, 253, 0.35)', // Light Purple
+      'rgba(251, 207, 232, 0.35)', // Light Pink
+      'rgba(134, 239, 172, 0.35)', // Light Green
     ];
 
     const generateCircles = () => {

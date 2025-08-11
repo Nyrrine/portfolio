@@ -6,8 +6,7 @@ import { useRef, useEffect, useState } from 'react';
 const impactMetrics = [
   { label: 'Communities Built', value: 208000, suffix: '+ members' },
   { label: 'Software Downloads', value: 1017000, suffix: '+ users' },
-  { label: 'Enterprise Value', value: 'Millions', prefix: '₱', suffix: ' handled' },
-  { label: 'Developer Projects', value: 4, suffix: ' production systems' }
+  { label: 'Project Count', value: 4, suffix: ' major projects' }
 ];
 
 export default function ImpactSummary() {
@@ -59,7 +58,7 @@ export default function ImpactSummary() {
           <div className="w-24 h-1 bg-gradient-to-r from-[var(--primary)] to-[var(--primary-light)] mx-auto" />
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid md:grid-cols-3 gap-8">
           {impactMetrics.map((metric, index) => (
             <motion.div
               key={index}

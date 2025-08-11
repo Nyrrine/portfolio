@@ -86,9 +86,9 @@ export default function About() {
               </div>
               <ul className="space-y-2 text-gray-600 dark:text-gray-400">
                 <li>• Helped scale Status to 1M+ users</li>
-                <li>• Built enterprise system handling ₱Millions daily</li>
+                <li>• Built enterprise FMCG system</li>
                 <li>• Grew Discord communities by 200K+ members</li>
-                <li>• Deployed 4 production systems with zero downtime</li>
+                <li>• Lead developer on multiple projects</li>
               </ul>
             </div>
 
@@ -97,12 +97,9 @@ export default function About() {
                 <Heart className="w-6 h-6 text-amber-500" />
                 <h4 className="font-semibold text-gray-900 dark:text-white">Interests</h4>
               </div>
-              <ul className="space-y-2 text-gray-600 dark:text-gray-400">
-                <li>• Game development and interactive experiences</li>
-                <li>• Community building and social platforms</li>
-                <li>• Process automation and efficiency</li>
-                <li>• Learning new technologies and frameworks</li>
-              </ul>
+              <p className="text-gray-600 dark:text-gray-400">
+                N/A - To be updated
+              </p>
             </div>
           </motion.div>
         </div>
@@ -116,7 +113,7 @@ export default function About() {
         >
           <div className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-full">
             <Rocket className="w-5 h-5" />
-            <span className="font-medium">Always learning, always building</span>
+            <span className="font-medium">Passion is the difference between having a job and having a career</span>
           </div>
         </motion.div>
       </div>
