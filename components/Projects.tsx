@@ -17,7 +17,7 @@ const projects = [
     bgPattern: 'bg-gradient-to-br from-blue-500/10 to-cyan-500/10',
     hoverColor: 'hover:shadow-blue-500/30',
     borderGlow: 'hover:border-blue-500',
-    tags: ['Data Management', 'RPA Development', 'Automation', 'Community Analytics'],
+    tags: ['Data Management', 'RPA Development', 'Automation', 'Community Analytics', 'DevRel'],
     link: '#'
   },
   {
@@ -26,7 +26,7 @@ const projects = [
     subtitle: 'FMCG Supply Chain Management',
     description: 'Full-Stack Development',
     metrics: [
-      { icon: DollarSign, value: '₱Millions', label: 'Handled in POS Daily' },
+      { icon: DollarSign, value: 'Millions', label: 'Handled in POS Daily', prefix: '₱' },
       { icon: Users, value: '40+', label: 'Concurrent Users' }
     ],
     color: 'from-emerald-500 to-teal-500',
@@ -125,7 +125,7 @@ export default function Projects() {
                       <metric.icon className="w-5 h-5 text-gray-400" />
                       <div className="flex items-baseline gap-2">
                         <span className={`text-2xl font-bold bg-gradient-to-r ${project.color} bg-clip-text text-transparent`}>
-                          {metric.value}
+                          {metric.prefix || ''}{metric.value}
                         </span>
                         <span className="text-gray-600 dark:text-gray-400">{metric.label}</span>
                       </div>

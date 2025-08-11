@@ -46,7 +46,7 @@ export default function ImpactSummary() {
   };
 
   return (
-    <section ref={ref} className="py-20 px-6 bg-gray-50 dark:bg-gray-900/50">
+    <section ref={ref} className="py-20 px-6">
       <div className="container mx-auto max-w-6xl">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -54,8 +54,7 @@ export default function ImpactSummary() {
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900 dark:text-white">TOTAL IMPACT AT AGE 19</h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-[var(--primary)] to-[var(--primary-light)] mx-auto" />
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white">TOTAL IMPACT AT AGE 19</h2>
         </motion.div>
 
         <div className="grid md:grid-cols-3 gap-8">
