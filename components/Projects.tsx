@@ -10,8 +10,8 @@ const projects = [
     subtitle: 'AI Social Simulation Platform',
     description: 'Data Manager & RPA Developer',
     metrics: [
-      { icon: Download, value: '1M+', label: 'Downloads' },
-      { icon: Users, value: '200K+', label: 'Discord Members' }
+      { icon: Download, value: '1M+', label: 'Downloads', prefix: '' },
+      { icon: Users, value: '200K+', label: 'Discord Members', prefix: '' }
     ],
     color: 'from-blue-500 to-cyan-500',
     bgPattern: 'bg-gradient-to-br from-blue-500/10 to-cyan-500/10',
@@ -27,7 +27,7 @@ const projects = [
     description: 'Full-Stack Development',
     metrics: [
       { icon: DollarSign, value: 'Millions', label: 'Handled in POS Daily', prefix: '₱' },
-      { icon: Users, value: '40+', label: 'Concurrent Users' }
+      { icon: Users, value: '40+', label: 'Concurrent Users', prefix: '' }
     ],
     color: 'from-emerald-500 to-teal-500',
     bgPattern: 'bg-gradient-to-br from-emerald-500/10 to-teal-500/10',
@@ -43,7 +43,7 @@ const projects = [
     subtitle: 'Social Network Platform',
     description: 'Data Manager & RPA Developer',
     metrics: [
-      { icon: Users, value: '8,000+', label: 'Discord Community' }
+      { icon: Users, value: '8,000+', label: 'Discord Community', prefix: '' }
     ],
     color: 'from-purple-500 to-pink-500',
     bgPattern: 'bg-gradient-to-br from-purple-500/10 to-pink-500/10',
@@ -59,7 +59,7 @@ const projects = [
     subtitle: 'Indie Game Project',
     description: 'Lead Developer',
     metrics: [
-      { icon: Download, value: '17,000+', label: 'Downloads' }
+      { icon: Download, value: '17,000+', label: 'Downloads', prefix: '' }
     ],
     color: 'from-amber-600 to-orange-500',
     bgPattern: 'bg-gradient-to-br from-amber-600/10 to-orange-500/10',

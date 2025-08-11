@@ -153,7 +153,7 @@ export default function WhyContactMe() {
           className="text-center mt-12"
         >
           <p className="text-gray-600 dark:text-gray-400 text-lg italic">
-            "Combining youthful innovation with enterprise-level expertise"
+            &ldquo;Combining youthful innovation with enterprise-level expertise&rdquo;
           </p>
         </motion.div>
       </div>
