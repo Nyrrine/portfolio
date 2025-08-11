@@ -47,11 +47,11 @@ export default function Hero() {
 
       const userTimer = setInterval(() => {
         setUsers(prev => {
-          if (prev >= 1000000) {
+          if (prev >= 2500000) {
             clearInterval(userTimer);
-            return 1000000;
+            return 2500000;
           }
-          return prev + 50000;
+          return prev + 125000;
         });
       }, 100);
 
@@ -85,7 +85,8 @@ export default function Hero() {
   }, [counted]);
 
   const formatNumber = (num: number) => {
-    if (num >= 1000000) return '1M+';
+    if (num >= 2000000) return '2.5M+';
+    if (num >= 1000000) return `${(num / 1000000).toFixed(1)}M+`;
     if (num >= 1000) return `${(num / 1000).toFixed(0)}K+`;
     return num.toString();
   };
@@ -110,7 +111,7 @@ export default function Hero() {
         >
           <div className="flex justify-center items-center">
             <span>Full-Stack Developer &</span>
-            <div className="relative inline-block w-52 h-16 flex items-center justify-center ml-2">
+            <div className="relative inline-block w-52 h-16 flex items-center justify-center ml-4">
               <motion.span
                 key={jobTitleIndex}
                 initial={{ opacity: 0 }}

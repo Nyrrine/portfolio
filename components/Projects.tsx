@@ -10,7 +10,7 @@ const projects = [
     title: 'STATUS',
     subtitle: 'AI Social Simulation Platform',
     description: 'Data Manager & RPA Developer',
-    logo: '/statuslogo.png',
+    logo: process.env.NODE_ENV === 'production' ? '/portfolio/statuslogo.png' : '/statuslogo.png',
     metrics: [
       { icon: Download, value: '2.5M+', label: 'Downloads', prefix: '' },
       { icon: Users, value: '200K+', label: 'Discord Members', prefix: '' }
@@ -27,7 +27,7 @@ const projects = [
     title: 'ARBITER',
     subtitle: 'FMCG Supply Chain Management',
     description: 'Full-Stack Development',
-    logo: '/arbiteraiapplogo.png',
+    logo: process.env.NODE_ENV === 'production' ? '/portfolio/arbiteraiapplogo.png' : '/arbiteraiapplogo.png',
     metrics: [
       { icon: TrendingUp, value: '₱ Millions', label: 'Handled in POS Daily', prefix: '' },
       { icon: Users, value: '40+', label: 'Concurrent Users', prefix: '' }
@@ -45,7 +45,7 @@ const projects = [
     title: 'THE OC NETWORK',
     subtitle: 'Social Network Platform',
     description: 'Data Manager & RPA Developer',
-    logo: '/ocsn.png',
+    logo: process.env.NODE_ENV === 'production' ? '/portfolio/ocsn.png' : '/ocsn.png',
     metrics: [
       { icon: Users, value: '8,000+', label: 'Discord Community', prefix: '' }
     ],
@@ -62,7 +62,7 @@ const projects = [
     title: 'CUSTOMS AND COFFEE',
     subtitle: 'Indie Game Project',
     description: 'Lead Developer',
-    logo: '/customsandcoffee.png',
+    logo: process.env.NODE_ENV === 'production' ? '/portfolio/customsandcoffee.png' : '/customsandcoffee.png',
     metrics: [
       { icon: Download, value: '17,000+', label: 'Downloads', prefix: '' }
     ],
