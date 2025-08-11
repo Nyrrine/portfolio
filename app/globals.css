@@ -1,15 +1,13 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 :root {
   --background: #ffffff;
   --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --primary: #4169E1;
+  --primary-light: #5A7FDB;
+  --primary-dark: #2E4BA7;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -22,5 +20,94 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@layer utilities {
+  .glass {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .gradient-text {
+    background: linear-gradient(to right, var(--primary), var(--primary-light));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .ray-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.8;
+  }
+  
+  .floating-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(60px);
+    opacity: 0.3;
+    animation: float 15s ease-in-out infinite;
+  }
+  
+  .orb-1 {
+    width: 400px;
+    height: 400px;
+    background: linear-gradient(135deg, #4169E1, #8B5CF6);
+    top: -10%;
+    left: -10%;
+    animation-duration: 20s;
+  }
+  
+  .orb-2 {
+    width: 350px;
+    height: 350px;
+    background: linear-gradient(135deg, #5A7FDB, #4169E1);
+    bottom: -10%;
+    right: -10%;
+    animation-duration: 25s;
+    animation-delay: -5s;
+  }
+  
+  .orb-3 {
+    width: 300px;
+    height: 300px;
+    background: linear-gradient(135deg, #2E4BA7, #5A7FDB);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation-duration: 30s;
+    animation-delay: -10s;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(50px, -50px);
+  }
+  50% {
+    transform: translate(-30px, 30px);
+  }
+  75% {
+    transform: translate(-50px, -30px);
+  }
 }
