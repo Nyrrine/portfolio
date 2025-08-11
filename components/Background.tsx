@@ -114,9 +114,9 @@ export default function Background() {
           const floatX = Math.sin(time * newCircle.duration * 0.1 + newCircle.id) * 0.3;
           const floatY = Math.cos(time * newCircle.duration * 0.1 + newCircle.id) * 0.3;
           
-          // Move towards target with floating effect
-          const dx = (newCircle.targetX - newCircle.x) * 0.001 + floatX;
-          const dy = (newCircle.targetY - newCircle.y) * 0.001 + floatY;
+          // Move towards target with floating effect (reduced speed by 35%)
+          const dx = (newCircle.targetX - newCircle.x) * 0.00065 + floatX * 0.65;
+          const dy = (newCircle.targetY - newCircle.y) * 0.00065 + floatY * 0.65;
           newCircle.x += dx;
           newCircle.y += dy;
 

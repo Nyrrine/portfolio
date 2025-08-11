@@ -10,7 +10,7 @@ const projects = [
     title: 'STATUS',
     subtitle: 'AI Social Simulation Platform',
     description: 'Data Manager & RPA Developer',
-    logo: process.env.NODE_ENV === 'production' ? '/portfolio/statuslogo-new.png' : '/statuslogo-new.png',
+    logo: process.env.NODE_ENV === 'production' ? '/portfolio/statuslogov2.png' : '/statuslogov2.png',
     metrics: [
       { icon: Download, value: '2.5M+', label: 'Downloads', prefix: '' },
       { icon: Users, value: '200K+', label: 'Discord Members', prefix: '' }

@@ -140,7 +140,7 @@ export default function Hero() {
           <div className="hidden md:block text-gray-400">•</div>
           <div className="flex items-center gap-2">
             <span className="text-gray-600 dark:text-gray-400">Total Impact:</span>
-            <span className="font-bold text-2xl gradient-text">{formatNumber(users)} by age 19</span>
+            <span className="font-bold text-2xl gradient-text">{formatNumber(users)}</span>
           </div>
           <div className="hidden md:block text-gray-400">•</div>
           <div className="flex items-center gap-2">

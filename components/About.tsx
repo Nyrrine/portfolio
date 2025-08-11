@@ -32,7 +32,7 @@ export default function About() {
                 <h3 className="text-2xl font-bold mb-3 text-gray-900 dark:text-white">Hi, I&apos;m Joaquin!</h3>
                 <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
                   At 19 years old, I&apos;ve already made my mark in the tech world by building and scaling platforms 
-                  that serve millions of users. From managing explosive growth at Status to developing enterprise 
+                  that serve 2.5 million users. From managing explosive growth at Status to developing enterprise 
                   solutions that handle millions in daily transactions, I bring a unique blend of technical expertise 
                   and business acumen to every project.
                 </p>
