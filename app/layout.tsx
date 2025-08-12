@@ -17,13 +17,13 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://nyrrine.github.io/portfolio'),
   icons: {
     icon: [
-      { url: '/nyrrineicon.png', type: 'image/png' },
-      { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
-      { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+      { url: '/portfolio/nyrrineicon.png?v=1', type: 'image/png' },
+      { url: '/portfolio/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
+      { url: '/portfolio/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
     ],
-    shortcut: '/nyrrineicon.png',
+    shortcut: '/portfolio/nyrrineicon.png?v=1',
     apple: [
-      { url: '/apple-touch-icon.png' },
+      { url: '/portfolio/apple-touch-icon.png' },
     ],
   },
   openGraph: {
@@ -61,6 +61,23 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <link rel="icon" href="/portfolio/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/portfolio/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/portfolio/favicon-16x16.png" />
+        <link rel="apple-touch-icon" href="/portfolio/apple-touch-icon.png" />
+        <link rel="shortcut icon" href="/portfolio/nyrrineicon.png" />
+        <meta property="og:title" content="Joaquin Ross - Full-Stack Developer & AI Engineer" />
+        <meta property="og:description" content="19-year-old Full-Stack Developer building enterprise solutions. 2.5M+ users impacted. Specializing in AI, automation, and scalable systems." />
+        <meta property="og:image" content="https://nyrrine.github.io/portfolio/og-preview.png" />
+        <meta property="og:url" content="https://nyrrine.github.io/portfolio" />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="Joaquin Ross Portfolio" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Joaquin Ross - Full-Stack Developer & AI Engineer" />
+        <meta name="twitter:description" content="19-year-old Full-Stack Developer building enterprise solutions. 2.5M+ users impacted." />
+        <meta name="twitter:image" content="https://nyrrine.github.io/portfolio/og-preview.png" />
+      </head>
       <body className={`${inter.variable} font-sans antialiased`}>
         <Background />
         <Navigation />
