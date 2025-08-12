@@ -1,7 +1,6 @@
 import Hero from "@/components/Hero";
 import Projects from "@/components/Projects";
 import Skills from "@/components/Skills";
-import TotalImpact from "@/components/TotalImpact";
 import WhyContactMe from "@/components/WhyContactMe";
 import About from "@/components/About";
 import Contact from "@/components/Contact";
@@ -13,7 +12,6 @@ export default function Home() {
       <Hero />
       <Projects />
       <Skills />
-      <TotalImpact />
       <WhyContactMe />
       <About />
       <Contact />
