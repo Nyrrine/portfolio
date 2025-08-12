@@ -165,7 +165,7 @@ export default function Skills() {
           setSelectedCategory((current) => (current + 1) % skillCategories.length);
           return 0;
         }
-        return prev + 1; // Increment by 1% every 100ms (10 seconds total)
+        return prev + 0.333; // Increment by 0.333% every 100ms (30 seconds total)
       });
     }, 100);
 
@@ -177,7 +177,7 @@ export default function Skills() {
     setProgress(0);
     setIsPaused(true);
     // Resume auto-switch after 3 seconds
-    setTimeout(() => setIsPaused(false), 3000);
+    setTimeout(() => setIsPaused(false), 5000);
   };
 
   return (
@@ -236,9 +236,9 @@ export default function Skills() {
         {/* Skills Display */}
         <motion.div
           key={selectedCategory}
-          initial={{ opacity: 0, scale: 0.95 }}
+          initial={{ opacity: 0, scale: 0.98 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.3 }}
+          transition={{ duration: 0.6, ease: "easeInOut" }}
           className={`
             relative rounded-2xl p-8 
             ${skillCategories[selectedCategory].bgColor}
@@ -297,7 +297,7 @@ export default function Skills() {
               <div className="flex items-center justify-between mb-2">
                 <span className="text-sm text-gray-600 dark:text-gray-400">Auto-switching in</span>
                 <span className="text-sm font-medium text-gray-900 dark:text-white">
-                  {Math.ceil((100 - progress) / 10)}s
+                  {Math.ceil((100 - progress) / 3.33)}s
                 </span>
               </div>
               <div className="w-full h-2 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden">
