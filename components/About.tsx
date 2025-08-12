@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Sparkles, Target, Rocket, Heart } from 'lucide-react';
+import { Sparkles, Target, Quote, Heart } from 'lucide-react';
 
 export default function About() {
   return (
@@ -116,9 +116,17 @@ export default function About() {
           viewport={{ once: true }}
           className="mt-12 text-center"
         >
-          <div className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-full">
-            <Rocket className="w-5 h-5" />
-            <span className="font-medium">Passion is the difference between having a job and having a career</span>
+          <div className="relative inline-block max-w-3xl">
+            {/* Glassy background */}
+            <div className="absolute inset-0 bg-white/10 dark:bg-gray-900/30 backdrop-blur-sm rounded-2xl border border-white/20 dark:border-gray-700/30" />
+            
+            {/* Content */}
+            <div className="relative px-8 py-6">
+              <Quote className="w-8 h-8 text-yellow-500 mb-4 mx-auto opacity-50" />
+              <p className="text-lg md:text-xl font-medium italic bg-gradient-to-r from-yellow-500 to-red-500 bg-clip-text text-transparent">
+                &ldquo;No one thinks about what awaits them at the end of the journey when embarking on an adventure. But that unknown future, twinkling so tantalizingly... is what inevitably draws us to venture toward them.&rdquo;
+              </p>
+            </div>
           </div>
         </motion.div>
       </div>
