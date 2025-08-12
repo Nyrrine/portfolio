@@ -6,14 +6,16 @@ import { Code2, Database, Wrench, Brain, Cpu } from 'lucide-react';
 import { 
   SiTypescript, SiJavascript, SiHtml5, SiCss3, SiReact, SiVite, SiExpress, SiTailwindcss,
   SiNodedotjs, SiPython, SiPostgresql, SiPandas, SiNumpy, SiJupyter,
-  SiVisualstudiocode, SiNotion, SiFigma, SiCanva, SiDocker, SiKubernetes, SiAmazonaws, SiLinux,
+  SiNotion, SiFigma, SiCanva, SiDocker, SiKubernetes, SiLinux,
   SiGithubactions
 } from 'react-icons/si';
+import { VscCode } from 'react-icons/vsc';
+import { FaAws } from 'react-icons/fa';
 import { BiNetworkChart } from 'react-icons/bi';
-import { TbBrandClaude } from 'react-icons/tb';
+import { SiClaude } from 'react-icons/si';
 
 // Skill icons mapping
-const skillIcons: { [key: string]: any } = {
+const skillIcons: { [key: string]: React.ComponentType<{ className?: string }> } = {
   'TypeScript': SiTypescript,
   'JavaScript': SiJavascript,
   'HTML5': SiHtml5,
@@ -28,16 +30,16 @@ const skillIcons: { [key: string]: any } = {
   'Pandas': SiPandas,
   'NumPy': SiNumpy,
   'Jupyter': SiJupyter,
-  'VS Code': SiVisualstudiocode,
+  'VS Code': VscCode,
   'Notion': SiNotion,
   'Figma': SiFigma,
   'Canva': SiCanva,
   'Docker': SiDocker,
   'Kubernetes': SiKubernetes,
-  'AWS': SiAmazonaws,
+  'AWS': FaAws,
   'Linux': SiLinux,
   'GitHub Actions': SiGithubactions,
-  'Claude': TbBrandClaude,
+  'Claude': SiClaude,
   'N8N': BiNetworkChart,
   'Vector DB': Database,
   'PyAutoGUI': SiPython,

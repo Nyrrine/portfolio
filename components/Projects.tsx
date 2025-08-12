@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { ExternalLink, Users, Download, DollarSign, TrendingUp } from 'lucide-react';
+import { ExternalLink, Users, Download, TrendingUp } from 'lucide-react';
 import Image from 'next/image';
 
 const projects = [
