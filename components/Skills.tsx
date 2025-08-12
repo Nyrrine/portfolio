@@ -1,8 +1,47 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Code2, Database, Wrench, Brain, Cpu } from 'lucide-react';
+import { 
+  SiTypescript, SiJavascript, SiHtml5, SiCss3, SiReact, SiVite, SiExpress, SiTailwindcss,
+  SiNodedotjs, SiPython, SiPostgresql, SiPandas, SiNumpy, SiJupyter,
+  SiVisualstudiocode, SiNotion, SiFigma, SiCanva, SiDocker, SiKubernetes, SiAmazonaws, SiLinux,
+  SiGithubactions
+} from 'react-icons/si';
+import { BiNetworkChart } from 'react-icons/bi';
+import { TbBrandClaude } from 'react-icons/tb';
+
+// Skill icons mapping
+const skillIcons: { [key: string]: any } = {
+  'TypeScript': SiTypescript,
+  'JavaScript': SiJavascript,
+  'HTML5': SiHtml5,
+  'CSS3': SiCss3,
+  'React': SiReact,
+  'Vite': SiVite,
+  'Express.js': SiExpress,
+  'Tailwind CSS': SiTailwindcss,
+  'Node.js': SiNodedotjs,
+  'Python': SiPython,
+  'PostgreSQL': SiPostgresql,
+  'Pandas': SiPandas,
+  'NumPy': SiNumpy,
+  'Jupyter': SiJupyter,
+  'VS Code': SiVisualstudiocode,
+  'Notion': SiNotion,
+  'Figma': SiFigma,
+  'Canva': SiCanva,
+  'Docker': SiDocker,
+  'Kubernetes': SiKubernetes,
+  'AWS': SiAmazonaws,
+  'Linux': SiLinux,
+  'GitHub Actions': SiGithubactions,
+  'Claude': TbBrandClaude,
+  'N8N': BiNetworkChart,
+  'Vector DB': Database,
+  'PyAutoGUI': SiPython,
+};
 
 const skillCategories = [
   {
@@ -112,6 +151,32 @@ const skillCategories = [
 
 export default function Skills() {
   const [selectedCategory, setSelectedCategory] = useState(0);
+  const [progress, setProgress] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
+
+  useEffect(() => {
+    if (isPaused) return;
+
+    const progressInterval = setInterval(() => {
+      setProgress((prev) => {
+        if (prev >= 100) {
+          setSelectedCategory((current) => (current + 1) % skillCategories.length);
+          return 0;
+        }
+        return prev + 1; // Increment by 1% every 100ms (10 seconds total)
+      });
+    }, 100);
+
+    return () => clearInterval(progressInterval);
+  }, [isPaused, selectedCategory]);
+
+  const handleCategoryClick = (index: number) => {
+    setSelectedCategory(index);
+    setProgress(0);
+    setIsPaused(true);
+    // Resume auto-switch after 3 seconds
+    setTimeout(() => setIsPaused(false), 3000);
+  };
 
   return (
     <section id="skills" className="py-20 px-6">
@@ -138,7 +203,9 @@ export default function Skills() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4, delay: index * 0.1 }}
               viewport={{ once: true }}
-              onClick={() => setSelectedCategory(index)}
+              onClick={() => handleCategoryClick(index)}
+              onMouseEnter={() => setIsPaused(true)}
+              onMouseLeave={() => setIsPaused(false)}
               className={`
                 px-6 py-3 rounded-xl font-medium transition-all duration-300
                 ${selectedCategory === index 
@@ -202,37 +269,45 @@ export default function Skills() {
 
             {/* Skills Grid */}
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
-              {skillCategories[selectedCategory].skills.map((skill, index) => (
-                <motion.div
-                  key={skill}
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: index * 0.03 }}
-                  className={`
-                    px-4 py-2.5 rounded-lg text-center font-medium
-                    ${skillCategories[selectedCategory].tagColor}
-                    hover:scale-105 transition-transform duration-200 cursor-default
-                  `}
-                >
-                  {skill}
-                </motion.div>
-              ))}
+              {skillCategories[selectedCategory].skills.map((skill, index) => {
+                const SkillIcon = skillIcons[skill];
+                return (
+                  <motion.div
+                    key={skill}
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: index * 0.03 }}
+                    className={`
+                      px-4 py-2.5 rounded-lg font-medium flex items-center gap-2
+                      ${skillCategories[selectedCategory].tagColor}
+                      hover:scale-105 transition-transform duration-200 cursor-default
+                    `}
+                  >
+                    {SkillIcon && <SkillIcon className="w-4 h-4" />}
+                    <span>{skill}</span>
+                  </motion.div>
+                );
+              })}
             </div>
 
-            {/* Skill Level Indicator */}
+            {/* Auto-switch Progress Bar */}
             <div className="mt-8 pt-6 border-t border-gray-200/50 dark:border-gray-700/50">
               <div className="flex items-center justify-between mb-2">
-                <span className="text-sm text-gray-600 dark:text-gray-400">Proficiency Level</span>
-                <span className="text-sm font-medium text-gray-900 dark:text-white">Expert</span>
+                <span className="text-sm text-gray-600 dark:text-gray-400">Auto-switching in</span>
+                <span className="text-sm font-medium text-gray-900 dark:text-white">
+                  {Math.ceil((100 - progress) / 10)}s
+                </span>
               </div>
               <div className="w-full h-2 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden">
                 <motion.div
-                  initial={{ width: 0 }}
-                  animate={{ width: '90%' }}
-                  transition={{ duration: 1, delay: 0.2 }}
+                  animate={{ width: `${progress}%` }}
+                  transition={{ duration: 0.1, ease: "linear" }}
                   className={`h-full bg-gradient-to-r ${skillCategories[selectedCategory].color}`}
                 />
               </div>
+              <p className="text-xs text-gray-500 dark:text-gray-500 mt-2 text-center">
+                {isPaused ? 'Auto-switch paused' : 'Categories rotate automatically'}
+              </p>
             </div>
           </div>
         </motion.div>
