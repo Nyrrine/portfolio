@@ -89,6 +89,7 @@ export default function About() {
                 <li>• Built enterprise FMCG system myself</li>
                 <li>• Implementing community support systems for 2.5 million users in Status</li>
                 <li>• Grew Discord communities by 200K+ members</li>
+                <li>• Supporting my mom financially through my development work</li>
                 <li>• Lead developer on multiple projects</li>
               </ul>
             </div>
@@ -98,9 +99,12 @@ export default function About() {
                 <Heart className="w-6 h-6 text-amber-500" />
                 <h4 className="font-semibold text-gray-900 dark:text-white">Interests</h4>
               </div>
-              <p className="text-gray-600 dark:text-gray-400">
-                N/A - To be updated
-              </p>
+              <ul className="space-y-2 text-gray-600 dark:text-gray-400">
+                <li>• Machine Learning & AI</li>
+                <li>• Gardening & Nature</li>
+                <li>• Indie Game Development</li>
+                <li>• Problem Solving & Puzzles</li>
+              </ul>
             </div>
           </motion.div>
         </div>

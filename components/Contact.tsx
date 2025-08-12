@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Mail, Github, Linkedin } from 'lucide-react';
+import { Mail, Github, Linkedin, BookOpen, Bell } from 'lucide-react';
 import { FaDiscord } from 'react-icons/fa';
 
 export default function Contact() {
@@ -74,27 +74,36 @@ export default function Contact() {
             </div>
           </div>
 
-          <div className="text-center space-y-4">
-            <div className="flex flex-col sm:flex-row gap-4 justify-center text-gray-600 dark:text-gray-400">
-              <div className="flex items-center gap-2 justify-center">
-                <Mail className="w-4 h-4" />
-                <span>nyrrine@gmail.com</span>
-              </div>
-              <div className="hidden sm:block">•</div>
-              <div className="flex items-center gap-2 justify-center">
-                <FaDiscord className="w-4 h-4" />
-                <span>Discord: nyrrine</span>
+          <div className="border-t border-gray-200 dark:border-gray-800 pt-8">
+            <div className="text-center mb-6">
+              <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white">Blogs & Newsletters</h3>
+              <p className="text-gray-500 dark:text-gray-500 text-sm mb-6">
+                Stay updated with my latest thoughts and insights
+              </p>
+              
+              <div className="bg-gray-50 dark:bg-gray-800/50 rounded-xl p-8 border-2 border-dashed border-gray-300 dark:border-gray-700">
+                <div className="flex justify-center mb-4">
+                  <div className="p-3 rounded-full bg-gray-200 dark:bg-gray-700">
+                    <BookOpen className="w-6 h-6 text-gray-400" />
+                  </div>
+                </div>
+                <p className="text-gray-400 dark:text-gray-500 italic">
+                  Coming soon...
+                </p>
+                <p className="text-sm text-gray-400 dark:text-gray-600 mt-2">
+                  Blog posts and newsletter updates will appear here
+                </p>
               </div>
             </div>
-            
-            <div className="pt-8 border-t border-gray-200 dark:border-gray-800">
-              <p className="text-gray-600 dark:text-gray-400 mb-4">
-                Currently available for freelance projects and full-time opportunities
-              </p>
-              <div className="inline-flex items-center gap-2">
-                <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-                <span className="text-green-600 dark:text-green-400 font-medium">Available for work</span>
-              </div>
+          </div>
+          
+          <div className="text-center pt-8 border-t border-gray-200 dark:border-gray-800">
+            <p className="text-gray-600 dark:text-gray-400 mb-4">
+              Currently available for freelance projects and full-time opportunities
+            </p>
+            <div className="inline-flex items-center gap-2">
+              <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
+              <span className="text-green-600 dark:text-green-400 font-medium">Available for work</span>
             </div>
           </div>
         </motion.div>

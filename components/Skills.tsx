@@ -8,7 +8,17 @@ const skillCategories = [
   {
     title: 'Frontend',
     icon: Code2,
-    skills: [], // To be filled by user
+    skills: [
+      'TypeScript',
+      'JavaScript', 
+      'HTML5',
+      'CSS3',
+      'React',
+      'Vite',
+      'Express.js',
+      'Tailwind CSS',
+      'WebSocket'
+    ],
     color: 'from-blue-500 to-cyan-500',
     hoverColor: 'hover:border-blue-500',
     bgGlow: 'hover:shadow-blue-500/20'
@@ -16,7 +26,17 @@ const skillCategories = [
   {
     title: 'Backend',
     icon: Database,
-    skills: [], // To be filled by user
+    skills: [
+      'JavaScript',
+      'Node.js',
+      'Python',
+      'TypeScript',
+      'PostgreSQL',
+      'Pandas',
+      'NumPy',
+      'Jupyter',
+      'DataGrip'
+    ],
     color: 'from-emerald-500 to-teal-500',
     hoverColor: 'hover:border-emerald-500',
     bgGlow: 'hover:shadow-emerald-500/20'
@@ -24,7 +44,20 @@ const skillCategories = [
   {
     title: 'AI & Automation',
     icon: Cpu,
-    skills: [], // To be filled by user
+    skills: [
+      'Claude',
+      'N8N',
+      'Perplexity',
+      'RAG',
+      'Vector DB',
+      'PyAutoGUI',
+      'Python',
+      'Fine-tuning',
+      'Training',
+      'Secrev',
+      'MCP Servers',
+      'GitHub Actions'
+    ],
     color: 'from-purple-500 to-pink-500',
     hoverColor: 'hover:border-purple-500',
     bgGlow: 'hover:shadow-purple-500/20'
@@ -32,7 +65,18 @@ const skillCategories = [
   {
     title: 'Tools & Tech',
     icon: Wrench,
-    skills: [], // To be filled by user
+    skills: [
+      'VS Code',
+      'Semgrep',
+      'OWASP',
+      'Notion',
+      'Figma',
+      'Canva',
+      'Docker',
+      'Kubernetes',
+      'AWS',
+      'Linux'
+    ],
     color: 'from-amber-500 to-orange-500',
     hoverColor: 'hover:border-amber-500',
     bgGlow: 'hover:shadow-amber-500/20'
@@ -40,7 +84,16 @@ const skillCategories = [
   {
     title: 'Soft Skills',
     icon: Brain,
-    skills: [], // To be filled by user
+    skills: [
+      'Community Management',
+      'Team Leadership',
+      'Crisis Resolution',
+      'Cross-functional Collaboration',
+      'Client Communication',
+      'Mentoring & Training',
+      'Problem Solving',
+      'Adaptability'
+    ],
     color: 'from-rose-500 to-pink-500',
     hoverColor: 'hover:border-rose-500',
     bgGlow: 'hover:shadow-rose-500/20'
@@ -81,7 +134,10 @@ export default function Skills() {
               <div className={`inline-flex p-3 rounded-lg bg-gradient-to-r ${category.color} mb-4 transition-transform duration-300 ${hoveredCategory === index ? 'scale-110' : ''}`}>
                 <category.icon className="w-6 h-6 text-white" />
               </div>
-              <h3 className="text-lg font-bold text-gray-900 dark:text-white">{category.title}</h3>
+              <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">{category.title}</h3>
+              <p className="text-sm text-gray-500 dark:text-gray-400">
+                {category.skills.length} skills
+              </p>
               
               {/* Floating skill cards that appear on hover */}
               {hoveredCategory === index && category.skills.length > 0 && (
@@ -97,8 +153,9 @@ export default function Skills() {
                         initial={{ opacity: 0, x: -10 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ delay: i * 0.05 }}
-                        className="text-sm text-gray-700 dark:text-gray-300"
+                        className="text-sm text-gray-700 dark:text-gray-300 flex items-center gap-2"
                       >
+                        <span className="w-1.5 h-1.5 rounded-full bg-gradient-to-r from-blue-500 to-purple-500" />
                         {skill}
                       </motion.div>
                     ))}
@@ -108,16 +165,6 @@ export default function Skills() {
             </motion.div>
           ))}
         </div>
-
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.6, delay: 0.6 }}
-          viewport={{ once: true }}
-          className="text-center mt-12 text-gray-500 dark:text-gray-400 italic"
-        >
-          Skills will be updated soon...
-        </motion.div>
       </div>
     </section>
   );
