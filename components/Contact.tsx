@@ -33,10 +33,10 @@ export default function Contact() {
             <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
               <a 
                 href="mailto:nyrrine@gmail.com" 
-                className="flex items-center gap-3 text-gray-600 dark:text-gray-400 hover:text-[var(--primary)] transition-colors group"
+                className="flex items-center gap-3 text-gray-600 dark:text-gray-400 hover:text-red-500 transition-all duration-300 group"
               >
-                <div className="p-3 rounded-lg bg-gray-100 dark:bg-gray-800 group-hover:bg-blue-100 dark:group-hover:bg-blue-900/30 transition-colors">
-                  <Mail className="w-5 h-5" />
+                <div className="p-3 rounded-lg bg-gray-100 dark:bg-gray-800 group-hover:bg-red-100 dark:group-hover:bg-red-900/30 transition-all duration-300">
+                  <Mail className="w-5 h-5 group-hover:text-red-500 transition-colors duration-300" />
                 </div>
                 <span className="font-medium">Email</span>
               </a>
@@ -45,10 +45,10 @@ export default function Contact() {
                 href="https://github.com/Nyrrine" 
                 target="_blank" 
                 rel="noopener noreferrer" 
-                className="flex items-center gap-3 text-gray-600 dark:text-gray-400 hover:text-[var(--primary)] transition-colors group"
+                className="flex items-center gap-3 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-all duration-300 group"
               >
-                <div className="p-3 rounded-lg bg-gray-100 dark:bg-gray-800 group-hover:bg-blue-100 dark:group-hover:bg-blue-900/30 transition-colors">
-                  <Github className="w-5 h-5" />
+                <div className="p-3 rounded-lg bg-gray-100 dark:bg-gray-800 group-hover:bg-gray-900 dark:group-hover:bg-gray-700 transition-all duration-300">
+                  <Github className="w-5 h-5 group-hover:text-white transition-colors duration-300" />
                 </div>
                 <span className="font-medium">GitHub</span>
               </a>
@@ -57,17 +57,17 @@ export default function Contact() {
                 href="https://www.linkedin.com/in/joaquin-ross-70a528346/" 
                 target="_blank" 
                 rel="noopener noreferrer" 
-                className="flex items-center gap-3 text-gray-600 dark:text-gray-400 hover:text-[var(--primary)] transition-colors group"
+                className="flex items-center gap-3 text-gray-600 dark:text-gray-400 hover:text-[#0077B5] transition-all duration-300 group"
               >
-                <div className="p-3 rounded-lg bg-gray-100 dark:bg-gray-800 group-hover:bg-blue-100 dark:group-hover:bg-blue-900/30 transition-colors">
-                  <Linkedin className="w-5 h-5" />
+                <div className="p-3 rounded-lg bg-gray-100 dark:bg-gray-800 group-hover:bg-[#0077B5] transition-all duration-300">
+                  <Linkedin className="w-5 h-5 group-hover:text-white transition-colors duration-300" />
                 </div>
                 <span className="font-medium">LinkedIn</span>
               </a>
               
-              <div className="flex items-center gap-3 text-gray-600 dark:text-gray-400 group">
-                <div className="p-3 rounded-lg bg-gray-100 dark:bg-gray-800">
-                  <FaDiscord className="w-5 h-5" />
+              <div className="flex items-center gap-3 text-gray-600 dark:text-gray-400 hover:text-[#5865F2] transition-all duration-300 group cursor-pointer">
+                <div className="p-3 rounded-lg bg-gray-100 dark:bg-gray-800 group-hover:bg-[#5865F2] transition-all duration-300">
+                  <FaDiscord className="w-5 h-5 group-hover:text-white transition-colors duration-300" />
                 </div>
                 <span className="font-medium">nyrrine</span>
               </div>
@@ -81,18 +81,34 @@ export default function Contact() {
                 Stay updated with my latest thoughts and insights
               </p>
               
-              <div className="bg-gray-50 dark:bg-gray-800/50 rounded-xl p-8 border-2 border-dashed border-gray-300 dark:border-gray-700">
-                <div className="flex justify-center mb-4">
-                  <div className="p-3 rounded-full bg-gray-200 dark:bg-gray-700">
-                    <BookOpen className="w-6 h-6 text-gray-400" />
+              <div className="space-y-4">
+                <div className="bg-gradient-to-br from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20 rounded-xl p-6">
+                  <div className="flex items-start gap-3">
+                    <div className="mt-1">
+                      <div className="w-2 h-2 bg-blue-500 rounded-full animate-pulse" />
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-gray-900 dark:text-white mb-2">Community Guidelines Project</h4>
+                      <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
+                        I&apos;ve recently launched a GitHub project focused on community guidelines to help create safer and more inclusive online spaces. Check it out on my GitHub!
+                      </p>
+                    </div>
                   </div>
                 </div>
-                <p className="text-gray-400 dark:text-gray-500 italic">
-                  Coming soon...
-                </p>
-                <p className="text-sm text-gray-400 dark:text-gray-600 mt-2">
-                  Blog posts and newsletter updates will appear here
-                </p>
+                
+                <div className="bg-gradient-to-br from-green-50 to-emerald-50 dark:from-green-900/20 dark:to-emerald-900/20 rounded-xl p-6">
+                  <div className="flex items-start gap-3">
+                    <div className="mt-1">
+                      <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-gray-900 dark:text-white mb-2">College Acceptance!</h4>
+                      <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
+                        Exciting news! I&apos;ve been accepted into college and I&apos;m looking forward to combining my academic journey with my passion for technology and development.
+                      </p>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

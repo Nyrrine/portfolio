@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Background from "@/components/Background";
 import Navigation from "@/components/Navigation";
+import ConsoleSignature from "@/components/ConsoleSignature";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -79,6 +80,7 @@ export default function RootLayout({
         <meta name="twitter:image" content="https://nyrrine.github.io/portfolio/og-preview.png" />
       </head>
       <body className={`${inter.variable} font-sans antialiased`}>
+        <ConsoleSignature />
         <Background />
         <Navigation />
         <main className="relative z-10">

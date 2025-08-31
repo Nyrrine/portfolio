@@ -57,13 +57,13 @@ export default function Hero() {
 
       const expTimer = setInterval(() => {
         setExperience(prev => {
-          if (prev >= 1) {
+          if (prev >= 3) {
             clearInterval(expTimer);
-            return 1;
+            return 3;
           }
           return prev + 1;
         });
-      }, 500);
+      }, 300);
 
       const projTimer = setInterval(() => {
         setProjects(prev => {
@@ -145,7 +145,7 @@ export default function Hero() {
           <div className="hidden md:block text-gray-400">•</div>
           <div className="flex items-center gap-2">
             <span className="text-gray-600 dark:text-gray-400">Experience:</span>
-            <span className="font-bold text-2xl gradient-text">{experience} Year</span>
+            <span className="font-bold text-2xl gradient-text">{experience} {experience === 1 ? 'Year' : 'Years'}</span>
           </div>
           <div className="hidden md:block text-gray-400">•</div>
           <div className="flex items-center gap-2">

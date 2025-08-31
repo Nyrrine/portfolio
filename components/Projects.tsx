@@ -3,6 +3,8 @@
 import { motion } from 'framer-motion';
 import { ExternalLink, Users, Download, TrendingUp } from 'lucide-react';
 import Image from 'next/image';
+import { useState } from 'react';
+import ProjectModal from './ProjectModal';
 
 const projects = [
   {
@@ -20,7 +22,32 @@ const projects = [
     hoverColor: 'hover:shadow-blue-500/30',
     borderGlow: 'hover:border-blue-500',
     tags: ['Data Management', 'RPA Development', 'Automation', 'Community Analytics', 'DevRel'],
-    link: '#'
+    link: '#',
+    detailedInfo: {
+      overview: 'STATUS is a revolutionary AI social simulation platform that has grown to serve over 2.5 million users. I played a crucial role in building and maintaining the gift rewards automation system that handles thousands of daily transactions and user interactions.',
+      keyFeatures: [
+        'Developed and maintained gift rewards automation system handling thousands of daily transactions',
+        'Implemented data management solutions for 2.5M+ user base',
+        'Built RPA solutions for community moderation and support',
+        'Created analytics dashboards for tracking user engagement and platform metrics',
+        'Spearheaded staffing for technical support and moderation departments',
+        'Managed explosive growth from startup to 200K+ Discord members'
+      ],
+      technologies: ['Python', 'JavaScript', 'Discord.js', 'Node.js', 'PostgreSQL', 'Redis', 'AWS', 'Docker', 'Git'],
+      myRole: [
+        'Built and maintained the gift rewards automation system from scratch',
+        'Managed data pipelines processing millions of user interactions',
+        'Led community management initiatives for 200K+ Discord members',
+        'Developed custom bots and automation tools for platform operations',
+        'Coordinated with cross-functional teams to implement new features',
+        'Provided technical support and resolved critical platform issues'
+      ],
+      links: {
+        live: 'https://www.statusai.com/',
+        documentation: 'https://www.statusai.com/'
+      },
+      status: 'completed'
+    }
   },
   {
     id: 2,
@@ -38,7 +65,29 @@ const projects = [
     borderGlow: 'hover:border-amber-500',
     tags: ['TypeScript', 'React', 'Node.js', 'PostgreSQL'],
     specialNote: 'Modernizes FMCG pivoting tables and workflows',
-    link: '#'
+    link: '#',
+    detailedInfo: {
+      overview: 'ARBITER is an enterprise-grade FMCG (Fast-Moving Consumer Goods) supply chain management system that I built from the ground up. The platform handles millions of pesos in daily transactions and serves 40+ concurrent users, modernizing traditional FMCG workflows.',
+      keyFeatures: [
+        'Real-time inventory tracking and management (WIP)',
+        'Advanced pivoting tables for data analysis (WIP)',
+        'Automated order processing and fulfillment (WIP)',
+        'Multi-location warehouse management (WIP)',
+        'Comprehensive reporting and analytics dashboard (WIP)',
+        'Role-based access control and user management (WIP)'
+      ],
+      technologies: ['TypeScript', 'React', 'Next.js', 'Node.js', 'Express', 'PostgreSQL', 'Redis', 'Docker', 'AWS'],
+      myRole: [
+        'Architected and developed the entire system from scratch',
+        'Designed database schema for complex supply chain operations',
+        'Implemented real-time data synchronization across multiple locations',
+        'Created intuitive UI/UX for non-technical users',
+        'Optimized performance to handle high-volume transactions',
+        'Provided ongoing maintenance and feature updates'
+      ],
+      links: {},
+      status: 'wip'
+    }
   },
   {
     id: 3,
@@ -55,7 +104,32 @@ const projects = [
     borderGlow: 'hover:border-pink-500',
     tags: ['Data Management', 'RPA Development', 'Community Building', 'Growth'],
     isGrowing: true,
-    link: '#'
+    link: '#',
+    detailedInfo: {
+      overview: 'The OC Network is a thriving social network platform where I serve as a key member of the development team. I built the community guidelines website and help manage a growing Discord community of 8,000+ members, focusing on creating safe and inclusive online spaces.',
+      keyFeatures: [
+        'Developed comprehensive community guidelines website',
+        'Implemented automated moderation systems',
+        'Created data analytics dashboards for community insights',
+        'Built engagement tracking and reporting tools',
+        'Managed community growth from inception to 8,000+ members',
+        'Established community safety protocols and procedures'
+      ],
+      technologies: ['HTML', 'CSS', 'JavaScript', 'React', 'Discord.js', 'Node.js', 'MongoDB', 'Python'],
+      myRole: [
+        'Built the official community guidelines website from scratch',
+        'Developed RPA solutions for community moderation',
+        'Managed data analytics for user engagement tracking',
+        'Led community growth initiatives and engagement strategies',
+        'Created automated systems for member onboarding',
+        'Collaborated with team to implement new platform features'
+      ],
+      links: {
+        github: 'https://nyrrine.github.io/ocsn-community-guidelines/',
+        documentation: 'https://nyrrine.github.io/ocsn-community-guidelines/'
+      },
+      status: 'completed'
+    }
   },
   {
     id: 4,
@@ -72,11 +146,46 @@ const projects = [
     borderGlow: 'hover:border-amber-700',
     tags: ['Godot', 'Project Management', 'Game Development', 'Team Leadership'],
     isInDev: true,
-    link: '#'
+    link: '#',
+    detailedInfo: {
+      overview: 'Customs and Coffee is an indie game project where I serve as the Lead Developer. With over 17,000 downloads, this project combines engaging gameplay with a unique coffee shop management simulation. Currently in active development with exciting new features on the horizon.',
+      keyFeatures: [
+        'Coffee shop management simulation mechanics (WIP)',
+        'Dynamic customer interaction system (WIP)',
+        'Procedural event generation for varied gameplay (WIP)',
+        'Resource management and upgrade systems (WIP)',
+        'Engaging storyline with multiple endings (WIP)',
+        'Custom art style and atmospheric soundtrack (WIP)'
+      ],
+      technologies: ['Godot Engine', 'GDScript', 'Python', 'Git', 'Aseprite', 'Audacity'],
+      myRole: [
+        'Leading development team and coordinating project roadmap',
+        'Programming core gameplay mechanics and systems',
+        'Implementing UI/UX design for optimal player experience',
+        'Managing version control and deployment pipeline',
+        'Coordinating with artists and sound designers',
+        'Handling community feedback and feature requests'
+      ],
+      links: {},
+      status: 'in-development'
+    }
   }
 ];
 
 export default function Projects() {
+  const [selectedProject, setSelectedProject] = useState<typeof projects[0] | null>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const handleViewDetails = (project: typeof projects[0]) => {
+    setSelectedProject(project);
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+    setTimeout(() => setSelectedProject(null), 300);
+  };
+
   return (
     <section id="projects" className="py-20 px-6">
       <div className="container mx-auto max-w-6xl">
@@ -170,18 +279,26 @@ export default function Projects() {
 
                 <p className="text-gray-600 dark:text-gray-400 mb-6">{project.description}</p>
 
-                <a 
-                  href={project.link}
+                <button 
+                  onClick={() => handleViewDetails(project)}
                   className="inline-flex items-center gap-2 text-[var(--primary)] hover:text-[var(--primary-dark)] transition-colors"
                 >
                   View Details
                   <ExternalLink className="w-4 h-4" />
-                </a>
+                </button>
               </div>
             </motion.div>
           ))}
         </div>
       </div>
+      
+      {selectedProject && (
+        <ProjectModal
+          isOpen={isModalOpen}
+          onClose={handleCloseModal}
+          project={selectedProject}
+        />
+      )}
     </section>
   );
 }
