@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Mail, Github, Linkedin, BookOpen } from 'lucide-react';
+import { Mail, Github, Linkedin } from 'lucide-react';
 import { FaDiscord } from 'react-icons/fa';
 
 export default function Contact() {

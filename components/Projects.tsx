@@ -46,7 +46,7 @@ const projects = [
         live: 'https://www.statusai.com/',
         documentation: 'https://www.statusai.com/'
       },
-      status: 'completed'
+      status: 'completed' as const
     }
   },
   {
@@ -86,7 +86,7 @@ const projects = [
         'Provided ongoing maintenance and feature updates'
       ],
       links: {},
-      status: 'wip'
+      status: 'wip' as const
     }
   },
   {
@@ -128,7 +128,7 @@ const projects = [
         github: 'https://nyrrine.github.io/ocsn-community-guidelines/',
         documentation: 'https://nyrrine.github.io/ocsn-community-guidelines/'
       },
-      status: 'completed'
+      status: 'completed' as const
     }
   },
   {
@@ -167,7 +167,7 @@ const projects = [
         'Handling community feedback and feature requests'
       ],
       links: {},
-      status: 'in-development'
+      status: 'in-development' as const
     }
   }
 ];
