@@ -1,12 +1,47 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { ExternalLink, Users, Download, TrendingUp } from 'lucide-react';
+import { ExternalLink, Users, Download, TrendingUp, LucideIcon } from 'lucide-react';
 import Image from 'next/image';
 import { useState } from 'react';
 import ProjectModal from './ProjectModal';
 
-const projects = [
+type Project = {
+  id: number;
+  title: string;
+  subtitle: string;
+  description: string;
+  logo: string;
+  metrics: Array<{
+    icon: LucideIcon;
+    value: string;
+    label: string;
+    prefix: string;
+  }>;
+  color: string;
+  bgPattern: string;
+  hoverColor: string;
+  borderGlow: string;
+  tags: string[];
+  link: string;
+  specialNote?: string;
+  isGrowing?: boolean;
+  isInDev?: boolean;
+  detailedInfo: {
+    overview: string;
+    keyFeatures: string[];
+    technologies: string[];
+    myRole: string[];
+    links?: {
+      live?: string;
+      github?: string;
+      documentation?: string;
+    };
+    status: 'completed' | 'in-development' | 'wip';
+  };
+};
+
+const projects: Project[] = [
   {
     id: 1,
     title: 'STATUS',
@@ -173,10 +208,10 @@ const projects = [
 ];
 
 export default function Projects() {
-  const [selectedProject, setSelectedProject] = useState<typeof projects[0] | null>(null);
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const handleViewDetails = (project: typeof projects[0]) => {
+  const handleViewDetails = (project: Project) => {
     setSelectedProject(project);
     setIsModalOpen(true);
   };
